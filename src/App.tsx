@@ -13,7 +13,7 @@ import NotFound from './components/NotFound'
 
 import {GlobalStyle} from './GlobalStyles';
 
-const App =() => (
+const App:React.FC =() => (
   (
     <Router>
       <Header/>

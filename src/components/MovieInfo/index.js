@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 //Styles
 import {Wrapper, Content,Text} from './MovieInfo.styles';
 //Config
-import {IMAGE_BASE_URL,POSTER_SIZE} from '../../config';
+import {IMAGE_BASE_URL,POSTER_SIZE} from '../../config.ts';
 //Image 
 import NoImage from '../../images/no_image.jpg';
 //Components
