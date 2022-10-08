@@ -1,21 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 
 import {Wrapper,Content} from './Grid.styles';
 
+//Types
+type Props ={
+    header:string;
+    children:React.ReactNode;
+}
+
 
 //children is a default prop
 //things nested in a component can be accessed through children
-const Grid = ({header,children}) => (
+const Grid:React.FC<Props> = ({header,children}) => (
     <Wrapper>
         <h1>{header}</h1>
         <Content>{children}</Content>
     </Wrapper>
 )
 
-Grid.propTypes={
-    header:PropTypes.string,
-}
 
 export default Grid;

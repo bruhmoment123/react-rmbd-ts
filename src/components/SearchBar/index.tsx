@@ -1,5 +1,4 @@
 import React,{useState, useEffect, useRef} from 'react';
-import PropTypes from 'prop-types';
 
 //Images
 import searchIcon from '../../images/search-icon.svg';
@@ -7,13 +6,18 @@ import searchIcon from '../../images/search-icon.svg';
 //Styles
 import {Wrapper, Content} from './SearchBar.styles';
 
+//Types
+type Props={
+    setSearchTerm:React.Dispatch<React.SetStateAction<string>>;
+}
+
 /*
 controlled component:
 a component controlled by react
 state gives the input's value and the input value changes as the state changes 
 this is so that we know the state is in sync with input field 
 */ 
-const SearchBar = ({setSearchTerm})=>{
+const SearchBar:React.FC<Props> = ({setSearchTerm})=>{
     const [state, setState] = useState('');
     //mutable and won't trigger a re-renderr
     const initial = useRef(true);
@@ -58,8 +62,5 @@ const SearchBar = ({setSearchTerm})=>{
     )
 }
 
-SearchBar.propTypes={
-    callback: PropTypes.func
-}
 
 export default SearchBar;

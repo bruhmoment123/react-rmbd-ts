@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Config
-import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config.ts';
+import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config';
 
 //Image
 import NoImage from '../images/no_image.jpg';
@@ -17,7 +17,7 @@ import SearchBar from './SearchBar';
 import Spinner from './Spinner';
 import Button from './Button'
 
-const Home = () => {
+const Home:React.FC = () => {
     const {state,loading, error,setSearchTerm,searchTerm,setIsLoadingMore} = useHomeFetch();
     
     if(error) return <div>Something went wrong...</div>

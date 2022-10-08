@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 //API
-import api from '../API';
+import api,{Movie} from '../API';
 
 //helpers
 import {isPersistedState} from '../helpers';
@@ -9,7 +9,7 @@ import {isPersistedState} from '../helpers';
 //initalState can be beneficial for whenever a reset is needed
 const initialState = {
     page:0,
-    results:[],
+    results:[] as Movie[],
     total_pages:0,
     total_results:0,
 
@@ -23,7 +23,7 @@ export const useHomeFetch = () => {
     const  [isLoadingMore,setIsLoadingMore] = useState(false);
 
 
-    const fetchMovies = async (page, searchTerm = '') => {
+    const fetchMovies = async (page:number, searchTerm = '') => {
         try{
             setError(false);
             setLoading(true);
