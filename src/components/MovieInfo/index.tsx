@@ -1,15 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 //Styles
 import {Wrapper, Content,Text} from './MovieInfo.styles';
 //Config
-import {IMAGE_BASE_URL,POSTER_SIZE} from '../../config.ts';
+import {IMAGE_BASE_URL,POSTER_SIZE} from '../../config';
 //Image 
 import NoImage from '../../images/no_image.jpg';
 //Components
 import Thumb from '../Thumb';
+//Types
+import {MovieState} from '../../hooks/useMovieFetch';
 
-const MovieInfo = ({movie}) => (
+type Props ={
+    movie:MovieState;
+}
+
+
+const MovieInfo:React.FC<Props> = ({movie}) => (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
 
@@ -47,9 +53,6 @@ const MovieInfo = ({movie}) => (
     </Wrapper>
 )
 
-MovieInfo.propTypes = {
-    movie: PropTypes.object
-}
 
 
 export default MovieInfo;
